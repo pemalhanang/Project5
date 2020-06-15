@@ -1,20 +1,32 @@
-let photoList = ["Hay Bales", "Lake", "Canyon", "Iceberg", "Desert", "Fall", "Plantation", "Dunes", "Countryside Lane", "Sunset", "Cave", "Bluebells"];
 
-$('photos').each(function () {
-  let caption = $(this).children().attr('data-title').toLowerCase();
-  photoList.push(caption);
-});
 
-$('.search').keyup(function() {
-  const request = $('.search').val().toLowerCase();
+let search = document.getElementById('search');
+ 
+ // get ul names
+ let ul = document.getElementById('names');
+ //get list from ul
+ let li = ul.querySelectorAll('li.data-title');
+
+// add event listener
+search.addEventListener('keyup',() => {
+// get input value
+let searchTerm = search.value.toLowerCase();
+   //loop through datat-title
+    for (let i = 0; i < li.length; i += 1) {
+        let a = li[i].getElementsByTagName('a')[0];
+        //if matched
+        if(a.innerHTML.toLowerCase().indexOf(searchTerm) > -1) {
+            li[i].style.display = '';
+        } else {
+            li[i].style.display = 'none';
+        
+        }
+    }
+
+} );
+
+
+    
+
+    
   
-  for (let i = 0; i < photoList.length; i += 1) {
-  let photo = photoList[i].toLowerCase();
-  let photos = document.querySelectorAll('.photo');
-    if(photo.indexOf(request) < 0) {
-      photos[i].style.display = 'none';
-} else {
-      photos[i].style.display = 'block';
-}
-}
-});
