@@ -13,9 +13,9 @@ search.addEventListener('keyup',() => {
 let searchTerm = search.value.toLowerCase();
    //loop through datat-title
     for (let i = 0; i < li.length; i += 1) {
-        let a = li[i].getElementsByTagName('a')[0];
+        let a = li[i].getElementsByTagName('a')[0].getAttribute('data-title');
         //if matched
-        if(a.innerHTML.toLowerCase().indexOf(searchTerm) > -1) {
+        if(a.toLowerCase().indexOf(searchTerm) > -1) {
             li[i].style.display = '';
         } else {
             li[i].style.display = 'none';
