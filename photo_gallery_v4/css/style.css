@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#search {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+#names {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 320px;
+        width: 100%;
+        margin: auto;
+        list-style: none;
+    }
+
+@media (min-width: 768px) {
+#names {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: auto;
+    list-style: none;
+}
+
+#names li {
+    padding: 24px 20px;
+    margin: auto;
+}
+
+} 
+
+
+
