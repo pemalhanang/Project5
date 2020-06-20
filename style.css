@@ -12,14 +12,12 @@
 }
 
 #names {
-   display: grid;
-   grid-template-columns: 240px 240px 240px 240px;
-   grid-template-rows: 200px 200px 200px 200px;
-   grid-gap: 2.2rem;
-   margin: 1.9rem;
-   list-style: none;
-   
-}
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 320px;
+        margin: auto;
+        list-style: none;
+    }
 
 @media (min-width: 768px) {
 #names {
